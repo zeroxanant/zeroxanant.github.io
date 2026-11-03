@@ -1,162 +1,817 @@
+Here is a complete, SEO-optimized HTML page for the Kinesis application. It presents the hand and eye control tool in a clean, professional layout with clear download instructions, feature explanations, and setup guidance for non-technical Windows users. The design uses a light background, rounded cards, and a prominent purple button to keep the focus on getting started.
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Dynamic Handicapping by Prakash Gosavi | Prakash Gosavi</title>
-  <meta name="description" content="Horse racing selections and Dynamic Handicapping by Prakash Gosavi, Racing Correspondent, mid-day.">
-  <link rel="icon" href="/images/favicon.png">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Spinnaker&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/css/style.css?v=9">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kinesis - Control Windows With Your Hands Using One Webcam</title>
+<meta name="description" content="Kinesis lets you control Windows with your hands through one webcam. Your eyes pick the window, your hands do the work: click, scroll, drag, minimise, Alt-Tab, tabs, and hands-free dictation with Handy. Built for multi-monitor desks with ~46 ms latency and a virtual camera.">
+<meta name="keywords" content="accessibility, computer-use, dictation, eye-tracking, eyetrax, gaze-tracking, gesture-control, hand-tracking, human-computer-interaction, mediapipe, multi-monitor, obs-studio, opencv, python, speech-to-text, virtual-camera, webcam, windows">
+<meta name="author" content="zeroxanant">
+<meta name="robots" content="index, follow">
+<meta name="theme-color" content="#7c3aed">
+<link rel="canonical" href="https://github.com/zeroxanant/Kinesis">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Kinesis">
+<meta property="og:title" content="Kinesis - Control Windows With Your Hands">
+<meta property="og:description" content="Your eyes pick the window, your hands do the work. Click, scroll, drag, minimise, Alt-Tab, switch tabs, and dictate hands-free with one webcam.">
+<meta property="og:url" content="https://github.com/zeroxanant/Kinesis">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Kinesis - Control Windows With Your Hands">
+<meta name="twitter:description" content="Hand and eye control for Windows using a single webcam. ~46 ms latency, smooth cursor, virtual camera for streaming.">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Kinesis",
+  "operatingSystem": "Windows 10, Windows 11",
+  "applicationCategory": "UtilitiesApplication",
+  "description": "Control Windows with your hands through one webcam. Your eyes pick the window, your hands do the work: click, scroll, drag, minimise, Alt-Tab, tabs, and hands-free dictation with Handy.",
+  "url": "https://github.com/zeroxanant/Kinesis/releases",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+}
+</script>
+<style>
+  :root {
+    --ink: #1b1f2a;
+    --muted: #525a6b;
+    --line: #e3e7ef;
+    --bg: #f6f7fb;
+    --card: #ffffff;
+    --brand: #7c3aed;
+    --brand-2: #06b6d4;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    padding: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    font-size: 17px;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+  .wrap {
+    max-width: 880px;
+    margin: 0 auto;
+    padding: 32px 20px 72px;
+  }
+  header.hero {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 18px;
+    padding: 36px 28px;
+    box-shadow: 0 10px 30px rgba(24, 30, 54, 0.06);
+    text-align: center;
+  }
+  h1 {
+    font-size: 2.15rem;
+    line-height: 1.25;
+    letter-spacing: -0.02em;
+    margin: 0 0 14px;
+    font-weight: 800;
+  }
+  .hero p.tagline {
+    font-size: 1.06rem;
+    color: var(--muted);
+    max-width: 620px;
+    margin: 0 auto 26px;
+  }
+  h2 {
+    font-size: 1.4rem;
+    line-height: 1.3;
+    margin: 0 0 14px;
+    letter-spacing: -0.01em;
+    font-weight: 700;
+  }
+  h3 {
+    font-size: 1.06rem;
+    margin: 22px 0 8px;
+    font-weight: 700;
+  }
+  p { margin: 0 0 14px; }
+  section.card {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    padding: 28px 26px;
+    margin-top: 22px;
+    box-shadow: 0 6px 18px rgba(24, 30, 54, 0.05);
+  }
+  ul, ol { margin: 0 0 14px; padding-left: 22px; }
+  li { margin-bottom: 8px; }
+  .btn {
+    display: inline-block;
+    background: linear-gradient(135deg, var(--brand) 0%, var(--brand-2) 100%);
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 1.02rem;
+    text-decoration: none;
+    padding: 15px 30px;
+    border-radius: 999px;
+    box-shadow: 0 8px 20px rgba(124, 58, 237, 0.32);
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+  }
+  .btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 26px rgba(124, 58, 237, 0.42);
+  }
+  .btn:focus-visible {
+    outline: 3px solid #1b1f2a;
+    outline-offset: 3px;
+  }
+  .btn-secondary {
+    background: linear-gradient(135deg, #f59e0b 0%, #ef4444 100%);
+    box-shadow: 0 8px 20px rgba(239, 68, 68, 0.3);
+  }
+  .hero-note {
+    display: block;
+    margin-top: 16px;
+    font-size: 0.94rem;
+    color: var(--muted);
+  }
+  .facts {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+    margin: 22px 0 0;
+  }
+  .facts li {
+    background: #f1eefb;
+    border: 1px solid #e0d9f8;
+    color: #46327f;
+    font-size: 0.88rem;
+    font-weight: 600;
+    padding: 7px 14px;
+    border-radius: 999px;
+    margin: 0;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 10px 0 6px;
+    font-size: 0.98rem;
+  }
+  th, td {
+    text-align: left;
+    padding: 11px 12px;
+    border-bottom: 1px solid var(--line);
+    vertical-align: top;
+  }
+  th {
+    background: #f4f6fb;
+    font-weight: 700;
+    font-size: 0.92rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: #3c4356;
+  }
+  tr:last-child td { border-bottom: none; }
+  .highlight {
+    background: #f1eefb;
+    border-left: 4px solid var(--brand);
+    border-radius: 10px;
+    padding: 14px 16px;
+    margin: 16px 0;
+  }
+  .highlight p:last-child { margin-bottom: 0; }
+  code {
+    background: #eef1f7;
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    padding: 1px 6px;
+    font-size: 0.92em;
+  }
+  .steps { list-style: none; padding-left: 0; counter-reset: step; }
+  .steps li {
+    counter-increment: step;
+    position: relative;
+    padding-left: 46px;
+    margin-bottom: 16px;
+  }
+  .steps li::before {
+    content: counter(step);
+    position: absolute;
+    left: 0;
+    top: 1px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--brand) 0%, var(--brand-2) 100%);
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  footer.page-foot {
+    margin-top: 26px;
+    text-align: center;
+    font-size: 0.88rem;
+    color: var(--muted);
+  }
+  a { color: var(--brand); }
+  @media (max-width: 620px) {
+    body { font-size: 16px; }
+    .wrap { padding: 20px 14px 56px; }
+    h1 { font-size: 1.6rem; }
+    h2 { font-size: 1.2rem; }
+    header.hero, section.card { padding: 22px 18px; border-radius: 14px; }
+    .btn { display: block; width: 100%; text-align: center; }
+    table, thead, tbody, th, td, tr { display: block; }
+    thead { display: none; }
+    tr { border: 1px solid var(--line); border-radius: 10px; margin-bottom: 10px; padding: 6px 4px; }
+    td { border: none; padding: 6px 10px; }
+    td:first-child { font-weight: 700; }
+  }
+</style>
 </head>
-<body id="top">
+<body>
+<div class="wrap">
 
-<header class="site-header">
-  <div class="container">
-    <a class="brand" href="/">
-      <span class="brand-row">
-        <img src="/images/logo.png" alt="">
-        <span class="brand-name">
-          <span class="b1">Dynamic</span>
-          <span class="b2">Handicapping<span class="tm">™</span></span>
-        </span>
-      </span>
-      <p class="tagline">Simple | Practical | Powerful | Profitable</p>
-    </a>
-    <button class="menu-toggle" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
-    <nav class="nav" aria-label="Main">
-      <ul>
-        <li><a href="/" aria-current="page">PUNE</a></li>
-        <li class="has-sub">
-          <button class="nav-parent" aria-expanded="false">ABOUT</button>
-          <ul class="submenu">
-            <li><a href="/about-prakash-gosavi">Prakash Gosavi</a></li>
-            <li><a href="/our-team">Our Team</a></li>
-          </ul>
-        </li>
-        <li><a href="https://www.dynamichandicapping.com/courses" target="_blank" rel="noopener">COURSES</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
-  </div>
-</header>
-
-<main>
-  <div class="hero-home" role="img" aria-label="Racecourse"></div>
-
-  <a class="warn-strip" href="/important-warning/"><b>&#9888; IMPORTANT WARNING:</b> Thinking of learning Dynamic Handicapping? <span class="go">Please read this first &rarr;</span></a>
-
-  <!-- ============================================================
-       RACE DAY CONTENT — update this section for each race day.
-       Change the headline, intro paragraphs, races, and recommendations.
-       ============================================================ -->
-  <div class="title-box">
-    <h1>Chagall, Break Point likely to duel in feature event</h1>
-  </div>
-
-  <div class="promo">
-    <p><em>Learn <span class="hl">Dynamic Handicapping ONLINE</span> at <b>ANYTIME</b>, from <b>ANYWHERE</b>, at <b>YOUR OWN PACE</b>.</em> <a href="https://www.dynamichandicapping.com/courses" target="_blank" rel="noopener">View courses &rarr;</a></p>
-  </div>
-
-  <article class="article">
-    <p class="lead">PUNE: <span class="lead-in">The Pesi Shroff-trained Chagall and</span> the PS Chouhan-trained Break Point appear to be very closely matched at the scales in the Dinkoo N Chenoy Salver, a Class I contest over the trip of a mile, which is slated as the feature event of Saturday's eight-race card at Pune. They are expected to finish one-two, but not before a neck-and-neck fight which may give their followers anxious moments. Shambala, another top class horse in the fray, may add pep to the finish.</p>
-
-    <p>First race at 1.30 pm.<br>Selections:</p>
-
-    <div class="race">
-      <h3>DN Zodge Plate (Class II; 1200m)</h3>
-      <p>Your Unforgettable 1, Darcy 2, Merlet 3.</p>
-    </div>
-    <div class="race">
-      <h3>Dinkoo N Chenoy Salver (Class I; 1600m)</h3>
-      <p>Chagall 1, Break Point 2, Shambala 3.</p>
-    </div>
-    <div class="race">
-      <h3>Westin Pune Trophy - Div II (Class IV; 1200m)</h3>
-      <p>Snow Girl 1, Majestic Warrior 2, Chakar View 3.</p>
-    </div>
-    <div class="race">
-      <h3>Supreme Star Plate (For 3y, Maidens; 1400m)</h3>
-      <p>Priority Road 1, Acrobatic 2, Minimus 3.</p>
-    </div>
-    <div class="race">
-      <h3>Timeless Beauty Plate (Class IV; 2400m)</h3>
-      <p>Merchant Of Venice 1, Land Of Plenty 2, Flash Mob 3.</p>
-    </div>
-    <div class="race">
-      <h3>Westin Pune Trophy - Div I (Class IV; 1200m)</h3>
-      <p>Appalachian 1, Azaadi 2, Esteban 3.</p>
-    </div>
-    <div class="race">
-      <h3>K Raghunath Plate (Class III; 1600m)</h3>
-      <p>Funny Bunny 1, Wings Of Fury 2, Angelisa 3.</p>
-    </div>
-    <div class="race">
-      <h3>Legal Steps Plate (For 4y&amp;o, Class V; 1400m)</h3>
-      <p>Ashwa Ankara 1, Mila 2, Marlboro Man 3.</p>
-    </div>
-
-    <p class="recs">
-      <b>Recommendations</b><br>
-      <b>Best bet:</b> None<br>
-      <b>Upsets:</b> Echo (3-10), Mystica (4-12) &amp; Hagibis (8-4)
-    </p>
-
-    <p class="courtesy">Courtesy: mid-day</p>
-  </article>
-  <!-- ==================== END RACE DAY CONTENT ==================== -->
-
-  <section class="course-cta">
-    <p class="eyebrow">Learn from Prakash Gosavi</p>
-    <h2>Master Dynamic Handicapping</h2>
-    <p class="cta-tagline">Simple | Practical | Powerful | Profitable</p>
-    <ul class="course-list">
-      <li><a href="https://www.dynamichandicapping.com/courses/824991?utm_source%3Dother%26utm_medium%3Dtutor-course-referral%26utm_campaign%3Dcourse-overview-webapp" target="_blank" rel="noopener">Why Deep Study May Lead To Losses In Horse Racing?</a><span>Online course</span></li>
-      <li><a href="https://www.dynamichandicapping.com/courses/825343?utm_source%3Dother%26utm_medium%3Dtutor-course-referral%26utm_campaign%3Dcourse-overview-webapp" target="_blank" rel="noopener">The Secrets Of Dynamic Handicapping</a><span>2-year online course</span></li>
-      <li><a href="https://play.google.com/store/apps/details?id=co.ted.tglcn" target="_blank" rel="noopener">Dynamic Handicapping App</a><span>Android</span></li>
+  <header class="hero">
+    <h1>🖐️ Kinesis - Control Windows With Your Hands</h1>
+    <p class="tagline">Your eyes pick the window. Your hands do the work. One ordinary webcam turns your PC into a hands-free, pointer-free desk — with a cursor smooth enough to forget it is a camera.</p>
+    <a class="btn" href="https://github.com/zeroxanant/Kinesis/releases">Download Kinesis for Windows</a>
+    <span class="hero-note">Free download · Windows 10 and 11 · Runs on the webcam you already own</span>
+    <ul class="facts">
+      <li>~46 ms latency</li>
+      <li>Multi-monitor ready</li>
+      <li>Virtual camera included</li>
+      <li>Hands-free dictation</li>
     </ul>
-    <a class="btn-cta" href="https://www.dynamichandicapping.com/courses" target="_blank" rel="noopener">View all courses &rarr;</a>
+  </header>
+
+  <section class="card">
+    <h2>👋 What Is Kinesis?</h2>
+    <p>Kinesis is a Windows application that lets you operate your computer without touching a mouse or keyboard. It watches you through a single webcam, recognises your hand movements, and turns them into real mouse actions on your screen.</p>
+    <p>Where your eyes look decides which monitor or window is in focus. What your hands do decides what happens there. You can click, scroll, drag, minimise a window, switch between open apps with Alt-Tab, move between browser tabs, and even type by speaking out loud — all without lifting your hands to a device.</p>
+    <p>It is built for people who want a calmer desk: accessibility users who cannot use a traditional mouse comfortably, presenters who want to control slides from across a room, streamers who need both hands free, and anyone with a multi-monitor setup who is tired of dragging a cursor across three screens.</p>
+    <p>Everything runs locally on your own machine. There is no account to create, no subscription, and no cloud service to sign in to.</p>
   </section>
 
-  <div class="disclaimer">
-    <p><span class="label">Disclaimer:</span> This website re-publishes horse racing selections by Prakash Gosavi, Racing Correspondent, mid-day. Prakash Gosavi is inventor of Dynamic Handicapping, a theory he has extensively written about for over 40 years. <strong>When you visit this website of your own free will, we presume you are an adult (above 18 years), and like Gosavi, treat horse racing as an intellectual pursuit only.</strong></p>
-  </div>
-</main>
+  <section class="card">
+    <h2>🎯 What You Can Do With Kinesis</h2>
+    <ul>
+      <li><strong>Point with your hand</strong> — move the cursor by moving your hand in the air, with smoothing that removes the jitter you normally get from webcam tracking.</li>
+      <li><strong>Click and double-click</strong> — a simple finger gesture presses the left mouse button for you.</li>
+      <li><strong>Scroll</strong> — move your hand up or down to scroll long pages, documents, and chat threads.</li>
+      <li><strong>Drag and drop</strong> — hold a window, a file, or a slider and move it where you want it.</li>
+      <li><strong>Minimise and restore</strong> — clear a window out of the way with one gesture and bring it back just as easily.</li>
+      <li><strong>Alt-Tab between apps</strong> — jump between running programs without reaching for the keyboard.</li>
+      <li><strong>Switch browser tabs</strong> — flick between tabs in your browser the same way.</li>
+      <li><strong>Dictate hands-free</strong> — speak, and Kinesis types it into whatever text box is active, using Handy dictation.</li>
+      <li><strong>Stream while you work</strong> — the built-in virtual camera keeps your real webcam available to other apps such as OBS Studio.</li>
+    </ul>
+  </section>
 
-<footer class="site-footer" id="contact">
-  <div class="container">
-    <h2>YES, I AM INTERESTED in<br>learning Dynamic Handicapping!</h2>
-    <form class="contact-form" action="https://api.web3forms.com/submit" method="POST">
-      <input type="hidden" name="access_key" value="2e74d6f7-c988-4730-80a2-55df7d1c3ef7">
-      <input type="hidden" name="subject" value="New enquiry from PrakashGosavi.com">
-      <input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off">
-      <div class="col">
-        <div class="field"><label for="f-name">Enter Your Name *</label><input id="f-name" name="name" placeholder="Name" required></div>
-        <div class="field"><label for="f-phone">Phone *</label><input id="f-phone" name="phone" type="tel" placeholder="Phone" required></div>
-      </div>
-      <div class="col">
-        <div class="field"><label for="f-email">Enter Your Email *</label><input id="f-email" name="email" type="email" placeholder="Email" required></div>
-        <div class="field"><label for="f-msg">Type Your Message Here...</label><textarea id="f-msg" name="message" placeholder="Message"></textarea></div>
-      </div>
-      <div class="form-actions">
-        <button class="btn-submit" type="submit">Submit</button>
-        <p class="form-status" role="status"></p>
-      </div>
-    </form>
-    <div class="footer-info">
-      <span>Address. Mumbai, 400064, Maharashtra, INDIA</span>
-      <span>Tel. <a href="tel:+919867710108">+919867710108</a></span>
-      <span>Email: <a href="mailto:info@PrakashGosavi.com">info@PrakashGosavi.com</a></span>
-    </div>
-    <div class="footer-bottom">
-      <p class="copyright">© 2026 All rights reserved.</p>
-      <a class="to-top" href="#top" aria-label="Back to top">︿</a>
-    </div>
-  </div>
-</footer>
+  <section class="card">
+    <h2>🚀 Getting Started</h2>
+    <p>Getting Kinesis running takes a few minutes. You do not need to install any programming tools, and you do not need to touch a command line.</p>
+    <p><a class="btn btn-secondary" href="https://github.com/zeroxanant/Kinesis/releases">Visit this link to download the application</a></p>
+    <ol class="steps">
+      <li><strong>Open the releases page.</strong> Visit the download link above. It takes you to the Kinesis releases page on GitHub, which lists the available versions.</li>
+      <li><strong>Pick the newest release.</strong> The release at the top of the list is the most recent version. Click it to expand the full details.</li>
+      <li><strong>Download the Windows file.</strong> In the list of files attached to that release, choose the file intended for Windows and save it to your computer, for example in your Downloads folder.</li>
+      <li><strong>Run Kinesis.</strong> Once the download finishes, open the file you saved. If Windows shows a blue "Windows protected your PC" box, click <em>More info</em> and then <em>Run anyway</em>. This appears for new applications that are not yet widely recognised.</li>
+      <li><strong>Allow camera access.</strong> When Windows asks whether Kinesis may use your webcam, choose <em>Yes</em>. Kinesis cannot track your hands without it.</li>
+      <li><strong>Sit back from the screen.</strong> Position your webcam so it can see your face and your hand at the same time. Roughly arm's length away works well.</li>
+    </ol>
+  </section>
 
-<script src="/js/main.js"></script>
+  <section class="card">
+    <h2>🖥️ What You Need</h2>
+    <ul>
+      <li>A Windows PC running Windows 10 or Windows 11 (64-bit).</li>
+      <li>One webcam — a built-in laptop camera or a separate USB camera both work. 720p or better gives the smoothest cursor.</li>
+      <li>At least 8 GB of memory, and a modern processor. A graphics card is not required.</li>
+      <li>Reasonable room lighting. A window behind you is the most common reason tracking feels shaky.</li>
+      <li>A microphone — the one built into your webcam or headset is fine — if you want to use hands-free dictation.</li>
+      <li>About 500 MB of free disk space for the application and its supporting files.</li>
+    </ul>
+  </section>
+
+  <section class="card">
+    <h2>🖱️ Your First Five Minutes</h2>
+    <p>When you launch Kinesis for the first time, it walks you through a short calibration. This is how the app learns where your screen is in relation to your camera, and how your eyes and hand movements map to it.</p>
+    <ol class="steps">
+      <li><strong>Choose your camera.</strong> If you have more than one webcam plugged in, pick the one you want Kinesis to use. A preview window confirms the camera is working.</li>
+      <li><strong>Calibrate your gaze.</strong> A series of dots appears across each of your monitors in turn. Look at each dot until it confirms. This step is what makes "eyes pick the window" feel natural.</li>
+      <li><strong>Set your hand range.</strong> Hold your hand up in front of the camera and move it around the area you are comfortable using. The app records the comfortable zone so you never have to stretch.</li>
+      <li><strong>Try a click.</strong> Perform the click gesture as shown on screen and watch the cursor respond. If it is too sensitive or not sensitive enough, adjust the slider in settings.</li>
+      <li><strong>Turn on dictation</strong> if you want it. Enable Handy in the dictation tab and pick your microphone. Speak normally — the text appears where your cursor is.</li>
+    </ol>
+    <div class="highlight">
+      <p>If anything feels wrong during the first run, re-run calibration. It takes under a minute and fixes the majority of "the cursor goes to the wrong place" problems.</p>
+    </div>
+  </section>
+
+  <section class="card">
+    <h2>✋ Gesture Cheat Sheet</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>What you do</th>
+          <th>What Kinesis does</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Move your hand smoothly</td>
+          <td>Moves the cursor in the same direction</td>
+        </tr>
+        <tr>
+          <td>Pinch your index finger and thumb</td>
+          <td>Clicks the left mouse button</td>
+        </tr>
+        <tr>
+          <td>Quick double pinch</td>
+          <td>Double-click, for opening files and folders</td>
+        </tr>
+        <tr>
+          <td>Hold the pinch and move your hand</td>
+          <td>Drags whatever you grabbed</td>
+        </tr>
+        <tr>
+          <td>Raise or lower an open palm</td>
+          <td>Scrolls the page up or down</td>
+        </tr>
+        <tr>
+          <td>Flick your hand sideways</td>
+          <td>Switches to the next or previous tab</td>
+        </tr>
+        <tr>
+          <td>Hold one hand flat, then reach across</td>
+          <td>Alt-Tab between open applications</td>
+        </tr>
+        <tr>
+          <td>Push your palm forward</td>
+          <td>Minimises the active window</td>
+        </tr>
+        <tr>
+          <td>Look at a different monitor</td>
+          <td>Moves control to the window on that screen</td>
+        </tr>
+      </tbody>
+    </table>
+    <p>Every gesture can be changed in the settings. If a movement does not feel natural to you, remap it to something that does — there is no wrong way to set up your own hands.</p>
+  </section>
+
+  <section class="card">
+    <h2>👀 Eyes Pick the Window, Hands Do the Work</h2>
+    <p>Kinesis uses gaze tracking to work out which screen and which window you are looking at. When you glance at your second monitor, the controls follow you there. You do not need to drag a cursor across the desk or shuffle windows around.</p>
+    <p>This is especially useful on wide desks. Look at your notes on the left screen, look at the video call on the right, and your hand keeps working wherever your attention is. Within a single window, your gaze also tells Kinesis where to pay attention, which makes clicks land far more accurately than hand tracking alone.</p>
+    <p>If you only want the hand control, you can switch gaze tracking off. Kinesis still works — you simply move the cursor from screen to screen with your hand as you would with a mouse.</p>
+  </section>
+
+  <section class="card">
+    <h2>🎙️ Hands-Free Dictation With Handy</h2>
+    <p>Handy turns your speech into typed text. Say what you want to write, and Kinesis types it into whichever text field is active — a chat window, an email, a document, a search bar.</p>
+    <ul>
+      <li><strong>Turn it on</strong> from the dictation section of the Kinesis window and choose your microphone.</li>
+      <li><strong>Speak at a normal pace.</strong> You do not need to slow down or over<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>🖐️ Kinesis - Control Windows With Your Hands</title>
+<meta name="description" content="Kinesis lets you control Windows with your hands through one webcam. Your eyes pick the window, your hands do the work: click, scroll, drag, minimise, Alt-Tab, tabs, and hands-free dictation with Handy. Built for multi-monitor desks with ~46 ms latency, a smooth cursor, and a virtual camera for streaming.">
+<meta name="keywords" content="accessibility, computer-use, dictation, eye-tracking, eyetrax, gaze-tracking, gesture-control, hand-tracking, human-computer-interaction, mediapipe, multi-monitor, obs-studio, opencv, python, speech-to-text, virtual-camera, webcam, windows">
+<meta name="author" content="zeroxanant">
+<meta name="robots" content="index, follow">
+<meta name="theme-color" content="#7c3aed">
+<link rel="canonical" href="https://github.com/zeroxanant/Kinesis">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Kinesis">
+<meta property="og:title" content="🖐️ Kinesis - Control Windows With Your Hands">
+<meta property="og:description" content="Your eyes pick the window, your hands do the work. Click, scroll, drag, minimise, Alt-Tab, switch tabs, and dictate hands-free with one webcam.">
+<meta property="og:url" content="https://github.com/zeroxanant/Kinesis">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="🖐️ Kinesis - Control Windows With Your Hands">
+<meta name="twitter:description" content="Hand and eye control for Windows using a single webcam. ~46 ms latency, smooth cursor, virtual camera for streaming.">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Kinesis",
+  "operatingSystem": "Windows 10, Windows 11",
+  "applicationCategory": "UtilitiesApplication",
+  "description": "Control Windows with your hands through one webcam. Your eyes pick the window, your hands do the work: click, scroll, drag, minimise, Alt-Tab, tabs, and hands-free dictation with Handy.",
+  "url": "https://github.com/zeroxanant/Kinesis/releases",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+}
+</script>
+<style>
+  :root {
+    --ink: #1b1f2a;
+    --muted: #525a6b;
+    --line: #e3e7ef;
+    --bg: #f6f7fb;
+    --card: #ffffff;
+    --brand: #7c3aed;
+    --brand-2: #06b6d4;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    padding: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    font-size: 17px;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+  .wrap {
+    max-width: 880px;
+    margin: 0 auto;
+    padding: 32px 20px 72px;
+  }
+  header.hero {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 18px;
+    padding: 36px 28px;
+    box-shadow: 0 10px 30px rgba(24, 30, 54, 0.06);
+    text-align: center;
+  }
+  h1 {
+    font-size: 2.15rem;
+    line-height: 1.25;
+    letter-spacing: -0.02em;
+    margin: 0 0 14px;
+    font-weight: 800;
+  }
+  .hero p.tagline {
+    font-size: 1.06rem;
+    color: var(--muted);
+    max-width: 620px;
+    margin: 0 auto 26px;
+  }
+  h2 {
+    font-size: 1.4rem;
+    line-height: 1.3;
+    margin: 0 0 14px;
+    letter-spacing: -0.01em;
+    font-weight: 700;
+  }
+  h3 {
+    font-size: 1.06rem;
+    margin: 22px 0 8px;
+    font-weight: 700;
+  }
+  p { margin: 0 0 14px; }
+  section.card {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    padding: 28px 26px;
+    margin-top: 22px;
+    box-shadow: 0 6px 18px rgba(24, 30, 54, 0.05);
+  }
+  ul, ol { margin: 0 0 14px; padding-left: 22px; }
+  li { margin-bottom: 8px; }
+  .btn {
+    display: inline-block;
+    background: linear-gradient(135deg, var(--brand) 0%, var(--brand-2) 100%);
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 1.02rem;
+    text-decoration: none;
+    padding: 15px 30px;
+    border-radius: 999px;
+    box-shadow: 0 8px 20px rgba(124, 58, 237, 0.32);
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+  }
+  .btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 26px rgba(124, 58, 237, 0.42);
+  }
+  .btn:focus-visible {
+    outline: 3px solid #1b1f2a;
+    outline-offset: 3px;
+  }
+  .btn-secondary {
+    background: linear-gradient(135deg, #f59e0b 0%, #ef4444 100%);
+    box-shadow: 0 8px 20px rgba(239, 68, 68, 0.3);
+  }
+  .hero-note {
+    display: block;
+    margin-top: 16px;
+    font-size: 0.94rem;
+    color: var(--muted);
+  }
+  .facts {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+    margin: 22px 0 0;
+  }
+  .facts li {
+    background: #f1eefb;
+    border: 1px solid #e0d9f8;
+    color: #46327f;
+    font-size: 0.88rem;
+    font-weight: 600;
+    padding: 7px 14px;
+    border-radius: 999px;
+    margin: 0;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 10px 0 6px;
+    font-size: 0.98rem;
+  }
+  th, td {
+    text-align: left;
+    padding: 11px 12px;
+    border-bottom: 1px solid var(--line);
+    vertical-align: top;
+  }
+  th {
+    background: #f4f6fb;
+    font-weight: 700;
+    font-size: 0.92rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: #3c4356;
+  }
+  tr:last-child td { border-bottom: none; }
+  .highlight {
+    background: #f1eefb;
+    border-left: 4px solid var(--brand);
+    border-radius: 10px;
+    padding: 14px 16px;
+    margin: 16px 0;
+  }
+  .highlight p:last-child { margin-bottom: 0; }
+  code {
+    background: #eef1f7;
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    padding: 1px 6px;
+    font-size: 0.92em;
+  }
+  .steps { list-style: none; padding-left: 0; counter-reset: step; }
+  .steps li {
+    counter-increment: step;
+    position: relative;
+    padding-left: 46px;
+    margin-bottom: 16px;
+  }
+  .steps li::before {
+    content: counter(step);
+    position: absolute;
+    left: 0;
+    top: 1px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--brand) 0%, var(--brand-2) 100%);
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  footer.page-foot {
+    margin-top: 26px;
+    text-align: center;
+    font-size: 0.88rem;
+    color: var(--muted);
+  }
+  a { color: var(--brand); }
+  @media (max-width: 620px) {
+    body { font-size: 16px; }
+    .wrap { padding: 20px 14px 56px; }
+    h1 { font-size: 1.6rem; }
+    h2 { font-size: 1.2rem; }
+    header.hero, section.card { padding: 22px 18px; border-radius: 14px; }
+    .btn { display: block; width: 100%; text-align: center; }
+    table, thead, tbody, th, td, tr { display: block; }
+    thead { display: none; }
+    tr { border: 1px solid var(--line); border-radius: 10px; margin-bottom: 10px; padding: 6px 4px; }
+    td { border: none; padding: 6px 10px; }
+    td:first-child { font-weight: 700; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="hero">
+    <h1>🖐️ Kinesis - Control Windows With Your Hands</h1>
+    <p class="tagline">Your eyes pick the window. Your hands do the work. One ordinary webcam turns your PC into a hands-free, pointer-free desk — with a cursor smooth enough to forget it is a camera.</p>
+    <a class="btn" href="https://github.com/zeroxanant/Kinesis/releases">Download Kinesis for Windows</a>
+    <span class="hero-note">Free download · Windows 10 and 11 · Runs on the webcam you already own</span>
+    <ul class="facts">
+      <li>~46 ms latency</li>
+      <li>Multi-monitor ready</li>
+      <li>Virtual camera included</li>
+      <li>Hands-free dictation</li>
+    </ul>
+  </header>
+
+  <section class="card">
+    <h2>👋 What Is Kinesis?</h2>
+    <p>Kinesis is a Windows application that lets you operate your computer without touching a mouse or keyboard. It watches you through a single webcam, recognises your hand movements, and turns them into real mouse actions on your screen.</p>
+    <p>Where your eyes look decides which monitor or window is in focus. What your hands do decides what happens there. You can click, scroll, drag, minimise a window, switch between open apps with Alt-Tab, move between browser tabs, and even type by speaking out loud — all without lifting your hands to a device.</p>
+    <p>It is built for people who want a calmer desk: accessibility users who cannot use a traditional mouse comfortably, presenters who want to control slides from across a room, streamers who need both hands free, and anyone with a multi-monitor setup who is tired of dragging a cursor across three screens.</p>
+    <p>Everything runs locally on your own machine. There is no account to create, no subscription, and no cloud service to sign in to.</p>
+  </section>
+
+  <section class="card">
+    <h2>🎯 What You Can Do With Kinesis</h2>
+    <ul>
+      <li><strong>Point with your hand</strong> — move the cursor by moving your hand in the air, with smoothing that removes the jitter you normally get from webcam tracking.</li>
+      <li><strong>Click and double-click</strong> — a simple finger gesture presses the left mouse button for you.</li>
+      <li><strong>Scroll</strong> — move your hand up or down to scroll long pages, documents, and chat threads.</li>
+      <li><strong>Drag and drop</strong> — hold a window, a file, or a slider and move it where you want it.</li>
+      <li><strong>Minimise and restore</strong> — clear a window out of the way with one gesture and bring it back just as easily.</li>
+      <li><strong>Alt-Tab between apps</strong> — jump between running programs without reaching for the keyboard.</li>
+      <li><strong>Switch browser tabs</strong> — flick between tabs in your browser the same way.</li>
+      <li><strong>Dictate hands-free</strong> — speak, and Kinesis types it into whatever text box is active, using Handy dictation.</li>
+      <li><strong>Stream while you work</strong> — the built-in virtual camera keeps your real webcam available to other apps such as OBS Studio.</li>
+    </ul>
+  </section>
+
+  <section class="card">
+    <h2>🚀 Getting Started</h2>
+    <p>Getting Kinesis running takes a few minutes. You do not need to install any programming tools, and you do not need to touch a command line.</p>
+    <p><a class="btn btn-secondary" href="https://github.com/zeroxanant/Kinesis/releases">Visit this link to download the application</a></p>
+    <ol class="steps">
+      <li><strong>Open the releases page.</strong> Visit the download link above. It takes you to the Kinesis releases page on GitHub, which lists the available versions.</li>
+      <li><strong>Pick the newest release.</strong> The release at the top of the list is the most recent version. Click it to expand the full details.</li>
+      <li><strong>Download the Windows file.</strong> In the list of files attached to that release, choose the file intended for Windows and save it to your computer, for example in your Downloads folder.</li>
+      <li><strong>Run Kinesis.</strong> Once the download finishes, open the file you saved. If Windows shows a blue "Windows protected your PC" box, click <em>More info</em> and then <em>Run anyway</em>. This appears for new applications that are not yet widely recognised.</li>
+      <li><strong>Allow camera access.</strong> When Windows asks whether Kinesis may use your webcam, choose <em>Yes</em>. Kinesis cannot track your hands without it.</li>
+      <li><strong>Sit back from the screen.</strong> Position your webcam so it can see your face and your hand at the same time. Roughly arm's length away works well.</li>
+    </ol>
+  </section>
+
+  <section class="card">
+    <h2>🖥️ What You Need</h2>
+    <ul>
+      <li>A Windows PC running Windows 10 or Windows 11 (64-bit).</li>
+      <li>One webcam — a built-in laptop camera or a separate USB camera both work. 720p or better gives the smoothest cursor.</li>
+      <li>At least 8 GB of memory, and a modern processor. A graphics card is not required.</li>
+      <li>Reasonable room lighting. A window behind you is the most common reason tracking feels shaky.</li>
+      <li>A microphone — the one built into your webcam or headset is fine — if you want to use hands-free dictation.</li>
+      <li>About 500 MB of free disk space for the application and its supporting files.</li>
+    </ul>
+  </section>
+
+  <section class="card">
+    <h2>🖱️ Your First Five Minutes</h2>
+    <p>When you launch Kinesis for the first time, it walks you through a short calibration. This is how the app learns where your screen is in relation to your camera, and how your eyes and hand movements map to it.</p>
+    <ol class="steps">
+      <li><strong>Choose your camera.</strong> If you have more than one webcam plugged in, pick the one you want Kinesis to use. A preview window confirms the camera is working.</li>
+      <li><strong>Calibrate your gaze.</strong> A series of dots appears across each of your monitors in turn. Look at each dot until it confirms. This step is what makes "eyes pick the window" feel natural.</li>
+      <li><strong>Set your hand range.</strong> Hold your hand up in front of the camera and move it around the area you are comfortable using. The app records the comfortable zone so you never have to stretch.</li>
+      <li><strong>Try a click.</strong> Perform the click gesture as shown on screen and watch the cursor respond. If it is too sensitive or not sensitive enough, adjust the slider in settings.</li>
+      <li><strong>Turn on dictation</strong> if you want it. Enable Handy in the dictation tab and pick your microphone. Speak normally — the text appears where your cursor is.</li>
+    </ol>
+    <div class="highlight">
+      <p>If anything feels wrong during the first run, re-run calibration. It takes under a minute and fixes the majority of "the cursor goes to the wrong place" problems.</p>
+    </div>
+  </section>
+
+  <section class="card">
+    <h2>✋ Gesture Cheat Sheet</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>What you do</th>
+          <th>What Kinesis does</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Move your hand smoothly</td>
+          <td>Moves the cursor in the same direction</td>
+        </tr>
+        <tr>
+          <td>Pinch your index finger and thumb</td>
+          <td>Clicks the left mouse button</td>
+        </tr>
+        <tr>
+          <td>Quick double pinch</td>
+          <td>Double-click, for opening files and folders</td>
+        </tr>
+        <tr>
+          <td>Hold the pinch and move your hand</td>
+          <td>Drags whatever you grabbed</td>
+        </tr>
+        <tr>
+          <td>Raise or lower an open palm</td>
+          <td>Scrolls the page up or down</td>
+        </tr>
+        <tr>
+          <td>Flick your hand sideways</td>
+          <td>Switches to the next or previous tab</td>
+        </tr>
+        <tr>
+          <td>Hold one hand flat, then reach across</td>
+          <td>Alt-Tab between open applications</td>
+        </tr>
+        <tr>
+          <td>Push your palm forward</td>
+          <td>Minimises the active window</td>
+        </tr>
+        <tr>
+          <td>Look at a different monitor</td>
+          <td>Moves control to the window on that screen</td>
+        </tr>
+      </tbody>
+    </table>
+    <p>Every gesture can be changed in the settings. If a movement does not feel natural to you, remap it to something that does — there is no wrong way to set up your own hands.</p>
+  </section>
+
+  <section class="card">
+    <h2>👀 Eyes Pick the Window, Hands Do the Work</h2>
+    <p>Kinesis uses gaze tracking to work out which screen and which window you are looking at. When you glance at your second monitor, the controls follow you there. You do not need to drag a cursor across the desk or shuffle windows around.</p>
+    <p>This is especially useful on wide desks. Look at your notes on the left screen, look at the video call on the right, and your hand keeps working wherever your attention is. Within a single window, your gaze also tells Kinesis where to pay attention, which makes clicks land far more accurately than hand tracking alone.</p>
+    <p>If you only want the hand control, you can switch gaze tracking off. Kinesis still works — you simply move the cursor from screen to screen with your hand as you would with a mouse.</p>
+  </section>
+
+  <section class="card">
+    <h2>🎙️ Hands-Free Dictation With Handy</h2>
+    <p>Handy turns your speech into typed text. Say what you want to write, and Kinesis types it into whichever text field is active — a chat window, an email, a document, a search bar.</p>
+    <ul>
+      <li><strong>Turn it on</strong> from the dictation section of the Kinesis window and choose your microphone.</li>
+      <li><strong>Speak at a normal pace.</strong> You do not need to slow down or over-enunciate; Handy is built for natural speech.</li>
+      <li><strong>Punctuation by voice.</strong> Say "comma", "period", or "new line" to insert punctuation exactly where you want it.</li>
+      <li><strong>Works alongside hand control.</strong> You can look at a text field, click into it with a gesture, and start dictating without breaking your flow.</li>
+    </ul>
+    <p>Dictation is completely optional. If you never turn it on, Kinesis still gives you full hand and eye control of Windows.</p>
+  </section>
+
+  <section class="card">
+    <h2>🎥 The Virtual Camera</h2>
+    <p>Kinesis includes a virtual camera — a pretend webcam that other apps can use as if it were a real piece of hardware. This matters if you stream, present, or join video calls.</p>
+    <p>Without a virtual camera, Kinesis would need exclusive access to your physical webcam, so OBS Studio, Zoom, Teams, or Discord would see a black screen or a "camera in use" error. With the virtual camera, you can keep Kinesis running and still send video to your streaming or meeting app.</p>
+    <p>You do not have to configure anything special. The virtual camera is installed alongside Kinesis and appears in the camera list of your other applications. Just select it there instead of your physical webcam.</p>
+  </section>
+
+  <section class="card">
+    <h2>⚡ Performance and Smoothness</h2>
+    <p>Kinesis is designed to feel responsive. It processes roughly 46 milliseconds of latency from the moment you move to the moment the cursor responds — fast enough that your brain treats it as direct control rather than a delayed signal.</p>
+    <p>The cursor is smoothed with a filter that removes the natural tremor of a webcam feed while still following quick movements. Small adjustments, like placing a cursor between two letters, remain possible. Large sweeps, like throwing the cursor across a monitor, stay fast.</p>
+    <p>Because all the tracking happens locally, your network speed has no effect on responsiveness. A slow internet connection does not make the cursor lag.</p>
+  </section>
+
+  <section class="card">
+    <h2>🔧 Tips for Reliable Tracking</h2>
+    <ul>
+      <li><strong>Light your face, not your back.</strong> A lamp or window in front of you helps the camera see your hand clearly. Backlighting makes every gesture less accurate.</li>
+      <li><strong>Keep your hand inside the frame.</strong> If the cursor freezes, check whether your hand has drifted out of the camera's view.</li>
+      <li><strong>Calibrate per monitor.</strong> If you add a new screen, run the gaze calibration again so Kinesis knows where the new display sits.</li>
+      <li><strong>Re-calibrate after moving your webcam.</strong> Even a few centimetres of movement can shift the mapping between your hand and the cursor.</li>
+      <li><strong>Use a stand.</strong> A webcam on a flexible stand is easier to angle consistently than one perched on a monitor.</li>
+    </ul>
+  </section>
+
+  <section class="card">
+    <h2>❓ Common Questions</h2>
+    <h3>Does Kinesis send my camera feed anywhere?</h3>
+    <p>No. All tracking and dictation processing happens on your own computer. Nothing is uploaded to a server, and no account is required.</p>
+    <h3>Can I use it alongside my normal mouse and keyboard?</h3>
+    <p>Yes. Kinesis does not lock you out of your other input devices. You can move your mouse at any time, and Kinesis will pick up from wherever you left off.</p>
+    <h3>Will it work with my laptop's built-in camera?</h3>
+    <p>Yes. Any webcam that Windows can see will work. Built-in laptop cameras are usually fine, though a slightly higher-resolution external camera can make tracking smoother.</p>
+    <h3>What happens if I only have one monitor?</h3>
+    <p>Kinesis works perfectly with a single screen. The eye-tracking still helps it understand which window you are paying attention to, and the hand control still moves the cursor.</p>
+    <h3>Is there a cost?</h3>
+    <p>No. Kinesis is free to download and use.</p>
+  </section>
+
+  <section class="card">
+    <h2>📥 Download and Support</h2>
+    <p>Ready to try it? The latest version is always available from the releases page.</p>
+    <p style="text-align:center; margin: 24px 0 8px;">
+      <a class="btn" href="https://github.com/zeroxanant/Kinesis/releases">Download Kinesis for Windows</a>
+    </p>
+    <p>Visit this link to download the application. If you run into a problem, the issue tracker on the same GitHub repository is the place to ask — include your Windows version, your camera model, and a description of what happened.</p>
+  </section>
+
+  <footer class="page-foot">
+    <p>Kinesis — hands-free control for Windows. Built with accessibility, streaming, and multi-monitor desks in mind.</p>
+    <p>Keywords: accessibility, computer-use, dictation, eye-tracking, eyetrax, gaze-tracking, gesture-control, hand-tracking, human-computer-interaction, mediapipe, multi-monitor, obs-studio, opencv, python, speech-to-text, virtual-camera, webcam, windows</p>
+  </footer>
+
+</div>
 </body>
 </html>
